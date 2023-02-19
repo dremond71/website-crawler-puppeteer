@@ -1,0 +1,10 @@
+{
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run file",
+      "program": "${workspaceFolder}/crawler.js"
+    }
+  ]
+}

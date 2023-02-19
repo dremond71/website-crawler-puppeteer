@@ -1,0 +1,13 @@
+node_modules/
+.env
+videos/beginner-conversational/
+.cache
+*.log
+*.txt
+tiny_download_data.json
+tiny_download_data2.json
+yoyo_basic_lessons_feb16.json
+package-lock.json
+
+
+

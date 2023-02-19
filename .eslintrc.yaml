@@ -1,0 +1,18 @@
+extends:
+  - plugin:prettier/recommended
+parserOptions:
+  ecmaVersion: 2020
+  sourceType: 'module'
+env:
+  es6: true
+  node: true
+  browser: true
+
+rules:
+  no-unused-vars:
+    - warn
+    - vars: all
+      args: after-used
+      ignoreRestSiblings: false
+  no-undef:
+    - error
