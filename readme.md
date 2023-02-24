@@ -30,8 +30,21 @@ Create an `.env` file with these environment variables
 ```txt
 USER_NAME='some user name'
 USER_PASSWORD='some user password'
-PERFORM_CLEANUP='false'
-PERFORM_DOWNLOAD='true'
+
+PERFORM_PDFS_CLEANUP='false'
+PERFORM_PDFS_DOWNLOAD='false'
+
+PERFORM_MP3S_CLEANUP='false'
+PERFORM_MP3S_DOWNLOAD='false'
+
+CREATE_COURSES_FOLDER_STRUCTURE='false'
+
+COURSES_TO_PROCESS=''
+
+COURSE_TO_PROCESS=''
+
+MAX_VIDEOS_TO_DOWNLOAD='50'
+
 ```
 
 ## Formatting files
@@ -52,3 +65,9 @@ node crawler.js | tee crawler_out.log
 
 This will direct all output to the crawler_out.log and also
 display the output in the terminal at the same time.
+
+## Running the file downloader application
+
+```sh
+node download_lessons.js | tee download_lessons_out.log
+```

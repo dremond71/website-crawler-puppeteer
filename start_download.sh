@@ -1,3 +1,6 @@
 #!/bin/bash
 
-node download_lessons.js | tee download_out.log
+clear
+
+bash -c "node download_lessons.js | tee download_lessons_out.log"
+
