@@ -249,7 +249,7 @@ async function main() {
     let courseTotalMP3DurationInSeconds = 0;
 
     console.log(
-      `\n  '${course.humanFriendlyName}' in directory '${course.name}'`
+      `\n\n  '${course.humanFriendlyName}' in directory '${course.name}'`
     );
     const courseContentFileNames = getNamesOfAllFileTypes(course);
 
@@ -329,27 +329,28 @@ async function main() {
       } // mp4 file does not exist
     } // loop through mp4 file names
 
-    if (mp4FileNames.length !== courseTotalMP4FilesConfirmed) {
+    if (mp4FileNames.length > 0) {
+      if (mp4FileNames.length !== courseTotalMP4FilesConfirmed) {
+        console.log(
+          `      Expected ${mp4FileNames.length} MP4 files but only confirmed ${courseTotalMP4FilesConfirmed}`
+        );
+      } else {
+        console.log(
+          `\n      Confirmed all ${mp4FileNames.length} MP4 files are accounted for and healthy`
+        );
+      }
       console.log(
-        `      Expected ${mp4FileNames.length} MP4 files but only confirmed ${courseTotalMP4FilesConfirmed}`
+        `      Total Course MP4 files size : ${getHumanFriendlySize(
+          courseTotalMP4FileBytes
+        )}`
       );
-    } else {
+      const humanFriendlyMP4Duration = getMediaFileDurationHumanFriendly(
+        courseTotalMP4DurationInSeconds
+      );
       console.log(
-        `\n      Confirmed all ${mp4FileNames.length} MP4 files are accounted for and healthy`
+        `      Total Course MP4 files duration  : ${humanFriendlyMP4Duration}\n`
       );
     }
-
-    console.log(
-      `      Total Course MP4 files size : ${getHumanFriendlySize(
-        courseTotalMP4FileBytes
-      )}`
-    );
-    const humanFriendlyMP4Duration = getMediaFileDurationHumanFriendly(
-      courseTotalMP4DurationInSeconds
-    );
-    console.log(
-      `      Total Course MP4 files duration  : ${humanFriendlyMP4Duration}\n`
-    );
 
     //
     // PDF files
@@ -401,20 +402,22 @@ async function main() {
       } // pdf file does not exist
     } // loop through pdf file names
 
-    if (pdfFileNames.length !== courseTotalPDFFilesConfirmed) {
+    if (pdfFileNames.length > 0) {
+      if (pdfFileNames.length !== courseTotalPDFFilesConfirmed) {
+        console.log(
+          `      Expected ${pdfFileNames.length} MP4 files but only confirmed ${courseTotalPDFFilesConfirmed}`
+        );
+      } else {
+        console.log(
+          `\n      Confirmed all ${pdfFileNames.length} PDF files are accounted for and healthy`
+        );
+      }
       console.log(
-        `      Expected ${pdfFileNames.length} MP4 files but only confirmed ${courseTotalPDFFilesConfirmed}`
-      );
-    } else {
-      console.log(
-        `\n      Confirmed all ${pdfFileNames.length} PDF files are accounted for and healthy`
+        `      Total Course PDF files size : ${getHumanFriendlySize(
+          courseTotalPDFFileBytes
+        )}`
       );
     }
-    console.log(
-      `      Total Course PDF files size : ${getHumanFriendlySize(
-        courseTotalPDFFileBytes
-      )}`
-    );
 
     //
     // MP3 files
@@ -488,27 +491,28 @@ async function main() {
       } // mp4 file does not exist
     } // loop through mp4 file names
 
-    if (mp3FileNames.length !== courseTotalMP3FilesConfirmed) {
+    if (mp3FileNames.length > 0) {
+      if (mp3FileNames.length !== courseTotalMP3FilesConfirmed) {
+        console.log(
+          `      Expected ${mp3FileNames.length} MP3 files but only confirmed ${courseTotalMP3FilesConfirmed}`
+        );
+      } else {
+        console.log(
+          `\n      Confirmed all ${mp3FileNames.length} MP3 files are accounted for and healthy`
+        );
+      }
       console.log(
-        `      Expected ${mp3FileNames.length} MP3 files but only confirmed ${courseTotalMP3FilesConfirmed}`
+        `      Total Course MP3 files size : ${getHumanFriendlySize(
+          courseTotalMP3FileBytes
+        )}`
       );
-    } else {
+      const humanFriendlyMP3Duration = getMediaFileDurationHumanFriendly(
+        courseTotalMP3DurationInSeconds
+      );
       console.log(
-        `\n      Confirmed all ${mp3FileNames.length} MP3 files are accounted for and healthy`
+        `      Total Course MP3 files duration  : ${humanFriendlyMP3Duration}`
       );
     }
-
-    console.log(
-      `      Total Course MP3 files size : ${getHumanFriendlySize(
-        courseTotalMP3FileBytes
-      )}`
-    );
-    const humanFriendlyMP3Duration = getMediaFileDurationHumanFriendly(
-      courseTotalMP3DurationInSeconds
-    );
-    console.log(
-      `      Total Course MP3 files duration  : ${humanFriendlyMP3Duration}`
-    );
 
     //
     // update main totals
