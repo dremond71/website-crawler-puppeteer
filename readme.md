@@ -45,6 +45,9 @@ COURSE_TO_PROCESS=''
 
 MAX_VIDEOS_TO_DOWNLOAD='50'
 
+COURSE_SUMMARY_MAIN_DIR=''
+
+COURSE_SUMMARY_INCLUDE_FILE_DETAILS='false'
 ```
 
 ## Formatting files
@@ -70,4 +73,10 @@ display the output in the terminal at the same time.
 
 ```sh
 node download_lessons.js | tee download_lessons_out.log
+```
+
+## Running the course summary application
+
+```sh
+node printCourseContentSummaries.js | tee print_summaries_out.log
 ```
